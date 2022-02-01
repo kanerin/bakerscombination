@@ -283,7 +283,6 @@
 }
 
 .mycard.mb-6 {
-    height: 350px;
     background-color: #fff;
 }
 
@@ -393,4 +392,19 @@ form > .clear_button {
     margin-bottom: 0%;
     display: flex;
     margin: 1% 1%;
+}
+
+.card-footer > a{
+    width: 8vw;
+    border-radius: 5px;
+    border-width: 3px;
+    font-size: 1.2vw;
+    background: #aa7150;
+    font-weight: bold;
+    color: #fff;
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3% 1%;
 }

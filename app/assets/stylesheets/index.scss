@@ -38,6 +38,11 @@
 .content_data{
   margin-left: 10%;
   width: 50%;
+  
+}
+
+.card-content{
+  position: relative;
 }
 
 .content_data > .ingredient_name{
@@ -53,6 +58,7 @@
   bottom: 5%;
   border: #aa7150;
   border-style: solid;
+  margin-bottom: 3%;
 }
 
 .content_data > .detail > a{
