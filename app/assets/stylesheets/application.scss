@@ -1,0 +1,62 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bulma";
+
+.navbar{
+  background: #aa7150;     /*背景の色を変える*/
+  color: #fff;
+}
+
+.navbar-item {
+  color: #fff;
+}
+
+.button {
+  color: #aa7150;
+}
+
+body {
+  min-height: 100vh;
+  background-image: url(./background.jpg);
+  background-repeat: repeat;
+  background-position: left top;
+  color: rgb(0, 0, 0);
+  font-family: sans-serif;
+}
+.pagination{
+  margin-bottom: 3vw;
+}
+
+ /*ページネーション自体のデザイン*/
+.pagination>li>a {
+  border: none;     /*枠線をなくす*/
+  color: #696969;   /*文字の色を変える*/
+}
+  
+  /* 表示しているページ番号のデザイン */
+.pagination>.active>a {
+  background: #93c9ff;     /*背景の色を変える*/
+  border-radius: 15px;     /*角を丸くする*/
+}
+  
+  /*ホバー時のデザイン*/
+.pagination>li>a:hover {
+  border-radius: 15px;    /*角を丸くする*/
+}
+
+.columns.is-centered{
+  width: 80%;
+}

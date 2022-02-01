@@ -1,0 +1,160 @@
+<%= stylesheet_link_tag 'new', :media => "all" %>
+<%= form_with model: @bakerscombination do |f| %>
+  <div class="menu">
+    <div class="home_field">
+      <div class="home_button">
+        <%= link_to "←ホーム", bakerscombinations_path %>
+      </div>
+    </div>
+    <div class="edit_field">
+      <input type="button" onclick="submit();" value="送信" />
+    </div>
+  </div>
+  
+  <div class="name_box">
+    <div class="name">
+      パンの名前<%= f.text_field :name, :size => 30, required: true %>
+    </div>
+  </div>
+
+  <div class="post_field", id="request_ajax_update">
+    <div class="left_side">
+      <div class="image_field">
+        <%= f.label :image %>
+        <%= f.file_field :image %>
+      </div>
+      <div class="device_field">
+        <div class="device_list">
+          <div class="device_name">オーブン</div>
+          <div class="device_manufacturer">
+            メーカー<%= f.text_field :microwave_manufacturer, :size => 30 %>
+          </div>
+          <div class="device_number">
+            型番<%= f.text_field :microwave_number, :size => 30 %>
+          </div>
+        </div>
+        <div class="device_list">
+          <div class="device_name">ホームベーカリー</div>
+          <div class="device_manufacturer">
+            メーカー<%= f.text_field :bakery_manufacturer, :size => 30 %>
+          </div>
+          <div class="device_number">
+            型番<%= f.text_field :bakery_number, :size => 30 %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="center_side">
+      <div class="center_side_list">
+        <div class="data_side">
+          <div class="little_title">
+            ベーカーズパーセント
+          </div>
+          <div class="ingredient">
+            <div class="ingredient_name">
+              材料
+            </div>
+            <div class="ingredient_number">
+              分量
+            </div>
+          </div>
+          <div class="ingredient">
+            <div class="ingredient_name">
+              <%= f.text_field :ingredient_1_name, required: true %>
+            </div>
+            <div class="ingredient_number">
+              <%= f.number_field :ingredient_1, :size => 30, required: true %> g
+            </div>
+          </div>
+          <div class="ingredient">
+            <div class="ingredient_name">
+              <%= f.text_field :ingredient_2_name, required: true %>
+            </div>
+            <div class="ingredient_number">
+              <%= f.number_field :ingredient_2, :size => 30, required: true %> g
+            </div>
+          </div>
+          <div class="ingredient">
+            <div class="ingredient_name">
+              <%= f.text_field :ingredient_3_name %>
+            </div>
+            <div class="ingredient_number">
+              <%= f.number_field :ingredient_3, :size => 30 %> g
+            </div>
+          </div>
+          <div class="ingredient">
+            <div class="ingredient_name">
+              <%= f.text_field :ingredient_4_name %>
+            </div>
+            <div class="ingredient_number">
+              <%= f.number_field :ingredient_4, :size => 30 %> g
+            </div>
+          </div>
+          <div class="ingredient">
+            <div class="ingredient_name">
+              <%= f.text_field :ingredient_5_name %>
+            </div>
+            <div class="ingredient_number">
+              <%= f.number_field :ingredient_5, :size => 30 %> g
+            </div>
+          </div>
+          <div class="ingredient">
+            <div class="ingredient_name">
+              <%= f.text_field :ingredient_6_name %>
+            </div>
+            <div class="ingredient_number">
+              <%= f.number_field :ingredient_6, :size => 30 %> g
+            </div>
+          </div>
+          <div class="ingredient">
+            <div class="ingredient_name">
+              <%= f.text_field :ingredient_7_name %>
+            </div>
+            <div class="ingredient_number">
+              <%= f.number_field :ingredient_7, :size => 30 %> g
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right_side">
+      <div class="little_title">
+        温度と時間
+      </div>
+      <div class="chunk">
+        <div class="chunk_name">
+          一次発酵
+        </div>
+        <div class="chunk_temp">
+           <%= f.number_field :ferment1_temperature, :size => 30 %> ℃
+        </div>
+        <div class="chunk_time">
+          <%= f.number_field :ferment1_time_minutes, :size => 30 %> 分 <%= f.number_field :ferment1_time_seconds, :size => 30 %> 秒
+        </div>
+      </div>
+      <div class="chunk">
+        <div class="chunk_name">
+          二次発酵
+        </div>
+        <div class="chunk_temp">
+           <%= f.number_field :ferment2_temperature, :size => 30 %> ℃
+        </div>
+        <div class="chunk_time">
+          <%= f.number_field :ferment2_time_minutes, :size => 30 %> 分 <%= f.number_field :ferment2_time_seconds, :size => 30 %> 秒
+        </div>
+      </div>
+      <div class="chunk">
+        <div class="chunk_name">
+          焼き
+        </div>
+        <div class="chunk_temp">
+          <%= f.number_field :roasted_temperature, :size => 30 %> ℃
+        </div>
+        <div class="chunk_time">
+          <%= f.number_field :roasted_time_minutes, :size => 30 %> 分 <%= f.number_field :roasted_time_seconds, :size => 30 %> 秒
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

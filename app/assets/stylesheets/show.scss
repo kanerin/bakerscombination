@@ -1,0 +1,396 @@
+.menu {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px auto;
+}
+@media screen and(max-width:790px){
+    .menu{
+        height: 60px;
+        display:block;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.home_field {
+  width: 25%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.home_button {
+  width: 250px;
+  border-radius: 5px;
+  font-size: 30px;
+  background: #aa7150;
+  font-weight: bold;
+}
+
+.home_button > a {
+  color: #fff;
+}
+
+.home_field > input {
+    width: 250px;
+    border-radius: 5px;
+    font-size: 30px;
+    background: #aa7150;
+    font-weight: bold;
+    color: #fff;
+    border-color: #aa7150;
+    border-style: solid;
+  }
+
+.edit_field {
+    width: 25%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;/* flexアイテムの左右中央を指定する */
+    align-items: center; /* flexアイテムの上下中央を指定する */
+}
+
+.edit_button {
+    width: 250px;
+    border-radius: 5px;
+    font-size: 30px;
+    border-color: #aa7150;
+    border-style: solid;
+    background: #fff;
+    font-weight: bold;
+  }
+
+.edit_button > a {
+  color: #aa7150;
+}
+
+.name_box {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+}
+
+.name_box > .name {
+    display: flex;
+    margin-left: 5%;
+    justify-content: center;/* flexアイテムの左右中央を指定する */
+    align-items: center; /* flexアイテムの上下中央を指定する */
+    font-size: 40px;
+    font-weight: bold;
+    position: relative;
+    padding: 1rem .5rem;
+}
+
+.name_box > .favorite {
+    
+    width: 25%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;/* flexアイテムの左右中央を指定する */
+    align-items: center; /* flexアイテムの上下中央を指定する */
+}
+
+.name_box > .favorite > a {
+    color: #000;
+    font-size: 25px;
+}
+
+.name_box > .name:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    content: '';
+    border-radius: 3px;
+    background-image: -webkit-gradient(linear, right top, left top, from(#ecb08d), to(#aa7150));
+    background-image: -webkit-linear-gradient(right, #ecb08d 0%, #aa7150 100%);
+    background-image: linear-gradient(to left, #ecb08d 0%, #aa7150 100%);
+}
+
+.post_field {
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.post_field > .left_side  {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    margin-left: 80px;
+}
+
+.post_field > .left_side > .image_field > img {
+    width: 100%;
+    border-color: #aa7150;
+    border-style: solid;
+    border-width: thick;
+}
+
+.post_field > .left_side > .device_field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+.post_field > .left_side > .device_field > .device_list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 10px auto;
+}
+
+.post_field > .left_side > .device_field > .device_list > .device_name {
+    position: left top;
+    text-align: left;
+    border-bottom: thick solid #aa7150;
+    font-size: 25px;
+}
+
+.post_field > .left_side > .device_field > .device_list > .device_manufacturer {
+    position: right;
+    text-align: right;
+    font-size: 25px;
+}
+
+.post_field > .left_side > .device_field > .device_list > .device_number {
+    position: right;
+    text-align: right;
+    font-size: 25px;
+}
+
+.post_field > form >.center_side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.post_field > form > .center_side > .center_side_list {
+    display: flex;
+    flex-direction: row;
+    height: 450px;
+
+}
+
+.data_side{
+    margin: 0px 30px;
+    width: 350px;
+}
+
+.calculation_side{
+    margin: 0px 30px;
+    width: 350px;
+}
+
+.little_title {
+    font-size: 35px;
+    border-bottom: thick solid #aa7150;
+    height: 50px;
+}
+
+.ingredient {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px auto;
+}
+
+.ingredient_name {
+    font-size: 30px;
+}
+.ingredient_number {
+    display: flex;
+    font-size: 30px;
+    margin-left: 50px;
+    
+}
+
+.ingredient_number > div{
+    margin-right: 10px;
+}
+
+.ingredient_unit {
+    font-size: 30px;
+}
+
+.ingredient_number > input {
+    border-color: #aa7150;
+    border-style: solid;
+    height: 35px;
+    width: 150px;
+    vertical-align: top;
+    font-size: 30px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.calculation_side_button {
+    width: 250px;
+    border-radius: 5px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.calculation_side_button > input {
+  border-color: #aa7150;
+  border-style: solid;
+  background: #fff;
+  width: 250px;
+  border-radius: 5px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #aa7150;
+}
+
+.post_field > .right_side {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin-right: 40px;
+}
+
+.chunk {
+    width: 100%;
+    margin: 10px auto;
+}
+
+.chunk_name {
+    font-size: 30px;
+}
+
+.chunk_time {
+    font-size: 25px;
+    text-align: right;
+}
+
+.chunk_temp {
+    font-size: 25px;
+    text-align: right;
+}
+
+.card.mb-6 {
+    height: 300px;
+}
+
+.mycard.mb-6 {
+    height: 350px;
+    background-color: #fff;
+}
+
+.card-header{
+    height: 60px;
+    border-bottom: thick solid #aa7150;
+    
+}
+
+.card-header-title{
+    font-size: 25px;
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+.my_container{
+    width: 65%;
+    display: flex;
+    justify-content: center;
+}
+
+.column.is-4 {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.my_post-container{
+    justify-content: center;
+    align-items: center;
+}
+
+.column.is-4 > .post-container{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.myself > p{
+    font-size: large;
+}
+
+form{
+    width: auto;
+    margin-bottom: 5%;
+    display: flex;
+}
+
+form > .search_box{
+    margin-right: 15px;
+}
+
+form > .search_box > input{
+    border: thick solid #aa7150;
+    width: 13vw;
+    height: 2.3vw;
+}
+
+form > input{
+    width: 8vw;
+    border-radius: 5px;
+    border-width: 3px;
+    font-size: 1.2vw;
+    border-color: #aa7150;
+    border-style: solid;
+    background: #fff;
+    font-weight: bold;
+    color: #aa7150;
+    margin-right: 15px;
+}
+
+h3{
+    width: 100%;
+    font-size: xx-large;
+    border-bottom: thick solid #aa7150;
+    margin-bottom: 15px;
+}
+
+form > .clear_button {
+    width: 5vw;
+    border-radius: 5px;
+    border-width: 3px;
+    font-size: 1.2vw;
+    background: #aa7150;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.card-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.card-footer > .button_to{
+    width: auto;
+    margin-bottom: 0%;
+    display: flex;
+    margin: 1% 1%;
+}

@@ -1,0 +1,161 @@
+<%= stylesheet_link_tag 'show', :media => "all" %>
+<%= stylesheet_link_tag 'index', :media => "all" %>
+
+<div class="menu">
+    <div class="home_field">
+      <div class="home_button">
+        <%= link_to "←ホーム", bakerscombinations_path %>
+      </div>
+    </div>
+    <div class="edit_field">
+      <% if current_user.id == @user.id %>
+        <div class="edit_button">
+          <%= link_to "マイ設定", edit_user_registration_path %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+
+<section class="main">
+  <div class="column is-4">
+    <div class="myself">
+      <p>名前 : <%= @user.name %></p>
+      <p>メールアドレス : <%= @user.email %></p>
+    </div>
+    <h3>マイ投稿</h3>
+    <%= form_tag({controller:"users",action:"show"}, method: :get) do %>
+      <div class="search_box">
+        <%= text_field_tag :search_1, params[:search_1] %>
+      </div>
+      <%= submit_tag '検索'  %>
+      <div class="clear_button">
+        <%= link_to "クリア", user_path(current_user.id) %>
+      </div>
+      
+    <% end %>
+
+    <div class="post-container">
+      <% @bakerscombinations.each do |t| %>
+        <div class="mycard mb-6">
+          <header class="card-header">
+            <p class="card-header-title">
+              <%= t.name %>
+            </p>
+          </header>
+          <div class="card-content">
+            <div class="content">
+
+              <% if t.image? %>
+                <%= image_tag t.image_url, size: "200x200" %>
+              <% else %>
+                <%= image_tag 'none_image.jpg', size: "200x200" %>
+              <% end %>
+              <%= link_to "詳細へ", bakerscombination_path(t.id) %>
+              
+            </div>
+          </div>
+          <footer class="card-footer">
+            <% if user_signed_in? && current_user.id == t.user_id %>
+              <%= button_to "削除する", bakerscombination_path(t.id), method: :delete, data: { confirm: '削除しますか？' } %>
+              <%= link_to "編集", edit_bakerscombination_path(t.id) %>
+            <% end %>
+          </footer>
+        </div>
+      <% end %>
+      <%= paginate @bakerscombinations, :param_name => 'page_1'  %>
+    </div>
+  </div>
+  <div class="my_container">
+    <div class="column is-5">
+      <h3>おきに</h3>
+      <%= form_tag({controller:"users",action:"show"}, method: :get) do %>
+        <div class="search_box">
+          <%= text_field_tag :search_2, params[:search_2] %>
+        </div>
+        <%= submit_tag '検索' %>
+        <div class="clear_button">
+        <%= link_to "クリア", user_path(current_user.id) %>
+      </div>
+      <% end %>
+
+      <div class="post-container">
+        <% @likes_list.each do |t| %>
+          <div class="card mb-6">
+            <header class="card-header">
+              <p class="card-header-title">
+                <%= t.name %>
+              </p>
+            </header>
+            <div class="card-content">
+              <div class="content">
+                <div class="content_img">
+                  <% if t.image? %>
+                    <%= image_tag t.image_url, size: "200x200" %>
+                  <% else %>
+                    <%= image_tag 'none_image.jpg', size: "200x200" %>
+                  <% end %>
+                </div>
+                <div class="content_data">
+                  <h3>使用材料</h3>
+                  <div class="ingredient_name">
+                    <% if !(t.ingredient_1_name == "") %>
+                      ・
+                    <% end %>
+                    <%= t.ingredient_1_name %>
+                  </div>
+                  <div class="ingredient_name">
+                    <% if !(t.ingredient_2_name == "") %>
+                      ・
+                    <% end %>
+                    <%= t.ingredient_2_name %>
+                  </div>
+                  <div class="ingredient_name">
+                    <% if !(t.ingredient_3_name == "") %>
+                      ・
+                    <% end %>
+                    <%= t.ingredient_3_name %>
+                  </div>
+                  <div class="ingredient_name">
+                    <% if !(t.ingredient_4_name == "") %>
+                      ・
+                    <% end %>
+                    <%= t.ingredient_4_name %>
+                  </div>
+                  <div class="ingredient_name">
+                    <% if !(t.ingredient_5_name == "") %>
+                      ・
+                    <% end %>
+                    <%= t.ingredient_5_name %>
+                  </div>
+                  <div class="ingredient_name">
+                    <% if !(t.ingredient_6_name == "") %> 
+                      ・
+                    <% end %>
+                    <%= t.ingredient_6_name %>
+                  </div>
+                  <div class="ingredient_name">
+                    <% if !(t.ingredient_7_name == "") %> 
+                      ・
+                    <% end %>
+                    <%= t.ingredient_7_name %>
+                  </div>
+                  <div class="detail">
+                    <%= link_to "詳細へ→", bakerscombination_path(t.id) %>
+                  </div>
+                  
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        <% end %>
+        <%= paginate @likes_list, :param_name => 'page_2' %>
+      </div>
+    </div>
+  </div>
+
+  
+
+
+</section>

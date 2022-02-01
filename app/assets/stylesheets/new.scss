@@ -1,0 +1,25 @@
+.edit_field > input{
+    width: 250px;
+    border-radius: 5px;
+    border-width: 3px;
+    font-size: 30px;
+    border-color: #aa7150;
+    border-style: solid;
+    background: #fff;
+    font-weight: bold;
+    color: #aa7150;
+}
+
+.actions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    display: block;
+}
+
+.section > .container > .columns.is-centered > .column.is-6 > form{
+    display: block;
+}

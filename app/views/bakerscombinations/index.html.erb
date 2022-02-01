@@ -1,0 +1,128 @@
+<%= stylesheet_link_tag 'index', :media => "all" %>
+
+<div class="menu">
+  <div class="home_field">
+    <div class="home_button">
+      <%= link_to '投稿', :controller => "bakerscombinations", :action => "new" %>
+    </div>
+  </div>
+  <div class="edit_field">
+    <div class="edit_button">
+      <% if user_signed_in? %>
+        <%= link_to "マイページへ", user_path(current_user.id) %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+  
+  <div class="container">
+    <div class="column is-5">
+      <div class="post-container">
+        <% @bakerscombinations.each do |t| %>
+          <div class="card mb-6">
+            <header class="card-header">
+              <p class="card-header-title">
+                <%= t.name %>
+              </p>
+            </header>
+            <div class="card-content">
+              <div class="content">
+                <div class="content_img">
+                  <% if t.image? %>
+                    <%= image_tag t.image_url, size: "200x200" %>
+                  <% else %>
+                    <%= image_tag 'none_image.jpg', size: "200x200" %>
+                  <% end %>
+                </div>
+                <div class="content_data">
+                  <h3>使用材料</h3>
+                  <div class="ingredient_name">
+                    <% if !(t.ingredient_1_name == "") %>
+                      ・
+                    <% end %>
+                    <%= t.ingredient_1_name %>
+                  </div>
+                  <div class="ingredient_name">
+                    <% if !(t.ingredient_2_name == "") %>
+                      ・
+                    <% end %>
+                    <%= t.ingredient_2_name %>
+                  </div>
+                  <div class="ingredient_name">
+                    <% if !(t.ingredient_3_name == "") %>
+                      ・
+                    <% end %>
+                    <%= t.ingredient_3_name %>
+                  </div>
+                  <div class="ingredient_name">
+                    <% if !(t.ingredient_4_name == "") %>
+                      ・
+                    <% end %>
+                    <%= t.ingredient_4_name %>
+                  </div>
+                  <div class="ingredient_name">
+                    <% if !(t.ingredient_5_name == "") %>
+                      ・
+                    <% end %>
+                    <%= t.ingredient_5_name %>
+                  </div>
+                  <div class="ingredient_name">
+                    <% if !(t.ingredient_6_name == "") %> 
+                      ・
+                    <% end %>
+                    <%= t.ingredient_6_name %>
+                  </div>
+                  <div class="detail">
+                    <%= link_to "詳細へ→", bakerscombination_path(t.id) %>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        <% end %>
+        <%= paginate @bakerscombinations %>
+      </div>
+    </div>
+  </div>
+
+  <%= search_form_for @q do |f| %>
+    <h3>投稿を検索</h3>
+    <div class="search_box">
+      <%= f.label :name, "パンの名前" %>
+      <%= f.search_field :name_cont %>
+    </div>
+
+    <div class="search_box">
+      <div class="device_name">オーブン</div>
+      <%= f.label :microwave_manufacturer, "メーカー" %>
+      <%= f.search_field :microwave_manufacturer_cont %>
+      <%= f.label :microwave_number, "型番" %>
+      <%= f.search_field :microwave_number_eq %>
+    </div>
+
+    <div class="search_box">
+      <div class="device_name">ホームベーカリー</div>
+      <%= f.label :bakery_manufacturer, "メーカー" %>
+      <%= f.search_field :bakery_manufacturer_cont %>
+      <%= f.label :bakery_number, "型番" %>
+      <%= f.search_field :bakery_number_eq %>
+    </div>
+
+    <div class="button_box">
+      <div class="clear_button">
+        <%= link_to "クリア", bakerscombinations_path %>
+      </div>
+      <%= f.submit "検索" %>
+    </div>
+
+    
+  <% end %>
+
+
+
+
+
+</div>

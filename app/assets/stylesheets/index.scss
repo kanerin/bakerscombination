@@ -1,0 +1,133 @@
+.main {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+
+.container{
+  display: flex;
+  width: 200vw;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+.post-container{
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+
+.column.is-5 {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.my_page_container{
+  width: 500px;
+}
+
+.content{
+  display: flex;
+  width: 90%;
+}
+
+.content_data{
+  margin-left: 10%;
+  width: 50%;
+}
+
+.content_data > .ingredient_name{
+  font-size: 20px;
+  display: inline-block;
+  margin-right: 5%;
+}
+
+.content_data > .detail{
+  display: inline-block;
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  border: #aa7150;
+  border-style: solid;
+}
+
+.content_data > .detail > a{
+  font-size: 20px;
+  color: #aa7150;
+  margin: 5px;
+}
+
+.bakerscombination_search{
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bakerscombination_search > h3{
+  font-size: 2vw;
+}
+
+.bakerscombination_search > .search_box > label{
+  font-size: 1.5vw;
+}
+
+.bakerscombination_search > .search_box > input{
+  width: 15vw;
+  height: 3vw;
+  font-size: 1vw;
+  background-color: #fff;
+  border: thick solid #aa7150;
+}
+
+.bakerscombination_search > .search_box{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5%;
+}
+
+.device_name {
+  position: left top;
+  text-align: left;
+  border-bottom: thick solid #aa7150;
+  font-size: 1.7vw;
+}
+
+.bakerscombination_search > .button_box{
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+
+.bakerscombination_search > .button_box > input{
+  width: 60%;
+  border-radius: 5px;
+  border-width: 3px;
+  font-size: 1.2vw;
+  border-color: #aa7150;
+  border-style: solid;
+  background: #fff;
+  font-weight: bold;
+  color: #aa7150;
+}
+
+.clear_button {
+  width: 30%;
+  border-radius: 5px;
+  border-width: 3px;
+  font-size: 1.2vw;
+  background: #aa7150;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clear_button > a {
+  color: #fff;
+}

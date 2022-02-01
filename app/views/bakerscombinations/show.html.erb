@@ -1,0 +1,215 @@
+<%= stylesheet_link_tag 'show', :media => "all" %>
+
+<div class="menu">
+  <div class="home_field">
+      <input type="button" onclick="window.history.back();" value="戻る">
+  </div>
+</div>
+
+<div class="name_box">
+  <div class="name">
+    <%= @bakerscombination.name %>
+  </div>
+  <div class="favorite">
+    <% if user_signed_in? %>
+      <% if current_user.already_liked?(@bakerscombination) %>
+        <%= link_to bakerscombination_like_path(@bakerscombination), method: :delete do %>
+          お気に入りから削除
+        <% end %>
+      <% else %>
+        <%= link_to bakerscombination_likes_path(@bakerscombination), method: :post do %>
+          お気に入りに登録
+        <% end %>
+      <% end %>
+    <% else %>
+      <p>いいねの数 = </p>
+      <%= @bakerscombination.likes.count %>
+    <% end %>
+  </div>
+</div>
+
+<div class="post_field", id="request_ajax_update">
+  <div class="left_side">
+    <div class="image_field">
+    <% if @bakerscombination.image? %>
+      <%= image_tag @bakerscombination.image_url, size: "250x200" if @bakerscombination.image? %>
+    <% else %>
+      <%= image_tag 'none_image.jpg', size: "200x200" %>
+    <% end %>
+    </div>
+    <div class="device_field">
+      <div class="device_list">
+        <div class="device_name">オーブン</div>
+        <div class="device_manufacturer"><%= @bakerscombination.microwave_manufacturer %></div>
+        <div class="device_number"><%= @bakerscombination.microwave_number %></div>
+      </div>
+      <div class="device_list">
+        <div class="device_name">ホームベーカリー</div>
+        <div class="device_manufacturer"><%= @bakerscombination.bakery_manufacturer %></div>
+        <div class="device_number"><%= @bakerscombination.bakery_number %></div>
+      </div>
+    </div>
+  </div>
+
+  <%= form_tag(bakerscombinationscalculation_path(@bakerscombination.id), method: :post, remote: true) { %>
+    <div class="center_side">
+      <div class="center_side_list">
+        <div class="data_side">
+          <div class="little_title">
+            分量
+          </div>
+          <div class="ingredient">
+            <div class="ingredient_name">
+              <%= @bakerscombination.ingredient_1_name %>
+            </div>
+            <div class="ingredient_number">
+              <%= @bakerscombination.ingredient_1 %> g
+            </div>
+          </div>
+          <div class="ingredient">
+            <div class="ingredient_name">
+              <%= @bakerscombination.ingredient_2_name %>
+            </div>
+            <div class="ingredient_number">
+              <%= @bakerscombination.ingredient_2 %> g
+            </div>
+          </div>
+          <div class="ingredient">
+            <div class="ingredient_name">
+              <%= @bakerscombination.ingredient_3_name %>
+            </div>
+            <div class="ingredient_number">
+              <%= @bakerscombination.ingredient_3 %> g
+            </div>
+          </div>
+          <div class="ingredient">
+            <div class="ingredient_name">
+              <%= @bakerscombination.ingredient_4_name %>
+            </div>
+            <div class="ingredient_number">
+              <%= @bakerscombination.ingredient_4 %> g
+            </div>
+          </div>
+          <div class="ingredient">
+            <div class="ingredient_name">
+              <%= @bakerscombination.ingredient_5_name %>
+            </div>
+            <div class="ingredient_number">
+              <%= @bakerscombination.ingredient_5 %> g
+            </div>
+          </div>
+          <div class="ingredient">
+            <div class="ingredient_name">
+              <%= @bakerscombination.ingredient_6_name %>
+            </div>
+            <div class="ingredient_number">
+              <%= @bakerscombination.ingredient_6 %> g
+            </div>
+          </div>
+        </div>
+        <div class="calculation_side">
+          <div class="little_title">
+            マイ分量
+          </div>
+          <div class="material", id="updated_by_ajax">
+            <div class="ingredient">
+              <div class="ingredient_name">
+                <%= @bakerscombination.ingredient_1_name %>
+              </div>
+              <div class="ingredient_number">
+                <%= number_field :data, :integer, min: 0%> g
+              </div>
+            </div>
+            <div class="ingredient">
+              <div class="ingredient_name">
+                <%= @bakerscombination.ingredient_2_name %>
+              </div>
+              <div class="ingredient_number">
+                g
+              </div>
+            </div>
+            <div class="ingredient">
+              <div class="ingredient_name">
+                <%= @bakerscombination.ingredient_3_name %>
+              </div>
+              <div class="ingredient_number">
+                g
+              </div>
+            </div>
+            <div class="ingredient">
+              <div class="ingredient_name">
+                <%= @bakerscombination.ingredient_4_name %>
+              </div>
+              <div class="ingredient_number">
+                g
+              </div>
+            </div>
+            <div class="ingredient">
+              <div class="ingredient_name">
+                <%= @bakerscombination.ingredient_5_name %>
+              </div>
+              <div class="ingredient_number">
+                g
+              </div>
+            </div>
+            <div class="ingredient">
+              <div class="ingredient_name">
+                <%= @bakerscombination.ingredient_6_name %>
+              </div>
+              <div class="ingredient_number">
+                g
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="calculation_side_button">
+        <%= submit_tag '計算する' %>
+      </div>
+    </div>
+    
+  
+  <% } %>
+  <div class="right_side">
+    <div class="little_title">
+      温度と時間
+    </div>
+    <div class="chunk">
+      <div class="chunk_name">
+        一次発酵
+      </div>
+      <div class="chunk_temp">
+        <%= @bakerscombination.ferment1_temperature %> ℃
+      </div>
+      <div class="chunk_time">
+        <%= @bakerscombination.ferment1_time_minutes %> 分 <%= @bakerscombination.ferment1_time_seconds %> 秒
+      </div>
+    </div>
+    <div class="chunk">
+      <div class="chunk_name">
+        二次発酵
+      </div>
+      <div class="chunk_temp">
+        <%= @bakerscombination.ferment2_temperature %> ℃
+      </div>
+      <div class="chunk_time">
+        <%= @bakerscombination.ferment2_time_minutes %> 分 <%= @bakerscombination.ferment2_time_seconds %> 秒
+      </div>
+    </div>
+    <div class="chunk">
+      <div class="chunk_name">
+        焼き
+      </div>
+      <div class="chunk_temp">
+        <%= @bakerscombination.roasted_temperature %> ℃
+      </div>
+      <div class="chunk_time">
+        <%= @bakerscombination.roasted_time_minutes %> 分 <%= @bakerscombination.roasted_time_seconds %> 秒
+      </div>
+    </div>
+  </div>
+</div>
+<%= javascript_pack_tag 'calculation' %>
+<script>
+  register_callback();
+</script>

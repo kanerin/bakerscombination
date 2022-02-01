@@ -1,0 +1,66 @@
+.menu {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px auto;
+  }
+  @media screen and(max-width:790px){
+      .menu{
+          height: 60px;
+          display:block;
+          justify-content: center;
+          align-items: center;
+      }
+  }
+  
+  .home_field {
+    width: 25%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+  }
+  
+  .home_button {
+    width: 250px;
+    border-radius: 5px;
+    font-size: 30px;
+    background: #aa7150;
+    font-weight: bold;
+  }
+  
+  .home_button > a {
+    color: #fff;
+  }
+  
+.edit_field {
+  width: 25%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;/* flexアイテムの左右中央を指定する */
+  align-items: center; /* flexアイテムの上下中央を指定する */
+}
+  
+.edit_field > input{
+  width: 250px;
+  border-radius: 5px;
+  border-width: 3px;
+  font-size: 30px;
+  border-color: #aa7150;
+  border-style: solid;
+  background: #fff;
+  font-weight: bold;
+  color: #aa7150;
+}
+  
+.edit_button > input {
+  background-color: #fff;
+  color: #aa7150;
+}
+
+form{
+  display: block;
+}
