@@ -31,9 +31,9 @@
               <div class="content">
                 <div class="content_img">
                   <% if t.image? %>
-                    <%= image_tag t.image_url, size: "200x200" %>
+                    <%= image_tag t.image_url, size: "300x300" %>
                   <% else %>
-                    <%= image_tag 'none_image.jpg', size: "200x200" %>
+                    <%= image_tag 'none_image.jpg', size: "300x300" %>
                   <% end %>
                 </div>
                 <div class="content_data">
@@ -73,6 +73,12 @@
                       ・
                     <% end %>
                     <%= t.ingredient_6_name %>
+                  </div>
+                  <div class="ingredient_name">
+                    <% if !(t.ingredient_7_name == "") %> 
+                      ・
+                    <% end %>
+                    <%= t.ingredient_7_name %>
                   </div>
                   <div class="detail">
                     <%= link_to "詳細へ→", bakerscombination_path(t.id) %>

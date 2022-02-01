@@ -51,8 +51,30 @@
                 <%= image_tag 'none_image.jpg', size: "200x200" %>
               <% end %>
               <div class="content_data">
-                <div class="detail">
-                  <%= link_to "詳細へ→", bakerscombination_path(t.id) %>
+                <div class="content_data">
+                  <h3>使用材料</h3>
+                  <div class="ingredient_name">
+                    <% if !(t.ingredient_1_name == "") %>
+                      ・
+                    <% end %>
+                    <%= t.ingredient_1_name %>
+                  </div>
+                  <div class="ingredient_name">
+                    <% if !(t.ingredient_2_name == "") %>
+                      ・
+                    <% end %>
+                    <%= t.ingredient_2_name %>
+                  </div>
+                  <div class="ingredient_name">
+                    <% if !(t.ingredient_3_name == "") %>
+                      ・
+                    <% end %>
+                    <%= t.ingredient_3_name %> ...
+                  </div>
+                  
+                  <div class="detail">
+                    <%= link_to "詳細へ→", bakerscombination_path(t.id) %>
+                  </div>
                 </div>
               </div>
               
@@ -94,9 +116,9 @@
               <div class="content">
                 <div class="content_img">
                   <% if t.image? %>
-                    <%= image_tag t.image_url, size: "200x200" %>
+                    <%= image_tag t.image_url, size: "350x350" %>
                   <% else %>
-                    <%= image_tag 'none_image.jpg', size: "200x200" %>
+                    <%= image_tag 'none_image.jpg', size: "350x350" %>
                   <% end %>
                 </div>
                 <div class="content_data">
