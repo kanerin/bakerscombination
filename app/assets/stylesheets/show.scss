@@ -292,6 +292,15 @@
 .card-header{
     height: 60px;
     border-bottom: thick solid #aa7150;
+    justify-content: space-between;
+}
+
+.contributor{
+    width: 30%;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 .card-header-title{

@@ -35,7 +35,7 @@
   display: flex;
   width: 90%;
   height: 100%;
-  align-items: center;
+  margin-top: 3%;
 }
 
 .content_data{
@@ -141,4 +141,11 @@
 
 .clear_button > a {
   color: #fff;
+}
+
+.column.is-5 > h3{
+  width: 100%;
+  font-size: xx-large;
+  border-bottom: thick solid #aa7150;
+  margin-bottom: 15px;
 }
