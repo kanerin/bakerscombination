@@ -22,6 +22,7 @@
     <div class="myself">
       <p>名前 : <%= @user.name %></p>
       <p>メールアドレス : <%= @user.email %></p>
+      <%= link_to "初期値設定", usersdefault_path(current_user.id) %>
     </div>
     <h3>マイ投稿</h3>
     <%= form_tag({controller:"users",action:"show"}, method: :get) do %>
@@ -45,11 +46,13 @@
           </header>
           <div class="card-content">
             <div class="content">
-              <% if t.image? %>
-                <%= image_tag t.image_url, size: "200x200" %>
-              <% else %>
-                <%= image_tag 'none_image.jpg', size: "200x200" %>
-              <% end %>
+              <div class="content_img">
+                <% if t.image? %>
+                  <%= image_tag t.image_url, size: "350x350" %>
+                <% else %>
+                  <%= image_tag 'none_image.jpg', size: "350x350" %>
+                <% end %>
+              </div>
               <div class="content_data">
                 <div class="content_data">
                   <h3>使用材料</h3>
@@ -69,7 +72,7 @@
                     <% if !(t.ingredient_3_name == "") %>
                       ・
                     <% end %>
-                    <%= t.ingredient_3_name %> ...
+                    <%= t.ingredient_3_name %>
                   </div>
                   
                   <div class="detail">
@@ -181,8 +184,5 @@
       </div>
     </div>
   </div>
-
-  
-
 
 </section>

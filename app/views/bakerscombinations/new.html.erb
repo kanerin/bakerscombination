@@ -27,19 +27,19 @@
         <div class="device_list">
           <div class="device_name">オーブン</div>
           <div class="device_manufacturer">
-            メーカー<%= f.text_field :microwave_manufacturer, :size => 30 %>
+            メーカー <%= f.text_field :microwave_manufacturer, :size => 30, :value => @user.microwave_manufacturer %>
           </div>
           <div class="device_number">
-            型番<%= f.text_field :microwave_number, :size => 30 %>
+            型番 <%= f.text_field :microwave_number, :size => 30, :value => @user.microwave_number %>
           </div>
         </div>
         <div class="device_list">
           <div class="device_name">ホームベーカリー</div>
           <div class="device_manufacturer">
-            メーカー<%= f.text_field :bakery_manufacturer, :size => 30 %>
+            メーカー <%= f.text_field :bakery_manufacturer, :size => 30, :value => @user.bakery_manufacturer %>
           </div>
           <div class="device_number">
-            型番<%= f.text_field :bakery_number, :size => 30 %>
+            型番 <%= f.text_field :bakery_number, :size => 30, :value => @user.bakery_number %>
           </div>
         </div>
       </div>
@@ -61,47 +61,47 @@
           </div>
           <div class="ingredient">
             <div class="ingredient_name">
-              <%= f.text_field :ingredient_1_name, required: true %>
+              <%= f.text_field :ingredient_1_name, required: true, :value => @user.ingredient_1_name %>
             </div>
             <div class="ingredient_number">
-              <%= f.number_field :ingredient_1, :size => 30, required: true %> g
+              <%= f.number_field :ingredient_1, :size => 30, required: true, :value => @user.ingredient_1 %> g
             </div>
           </div>
           <div class="ingredient">
             <div class="ingredient_name">
-              <%= f.text_field :ingredient_2_name, required: true %>
+              <%= f.text_field :ingredient_2_name, required: true, :value => @user.ingredient_2_name %>
             </div>
             <div class="ingredient_number">
-              <%= f.number_field :ingredient_2, :size => 30, required: true %> g
+              <%= f.number_field :ingredient_2, :size => 30, required: true, :value => @user.ingredient_2 %> g
             </div>
           </div>
           <div class="ingredient">
             <div class="ingredient_name">
-              <%= f.text_field :ingredient_3_name %>
+              <%= f.text_field :ingredient_3_name, :value => @user.ingredient_3_name %>
             </div>
             <div class="ingredient_number">
-              <%= f.number_field :ingredient_3, :size => 30 %> g
+              <%= f.number_field :ingredient_3, :size => 30, :value => @user.ingredient_3 %> g
             </div>
           </div>
           <div class="ingredient">
             <div class="ingredient_name">
-              <%= f.text_field :ingredient_4_name %>
+              <%= f.text_field :ingredient_4_name, :value => @user.ingredient_4_name %>
             </div>
             <div class="ingredient_number">
-              <%= f.number_field :ingredient_4, :size => 30 %> g
+              <%= f.number_field :ingredient_4, :size => 30, :value => @user.ingredient_4 %> g
             </div>
           </div>
           <div class="ingredient">
             <div class="ingredient_name">
-              <%= f.text_field :ingredient_5_name %>
+              <%= f.text_field :ingredient_5_name, :value => @user.ingredient_5_name %>
             </div>
             <div class="ingredient_number">
-              <%= f.number_field :ingredient_5, :size => 30 %> g
+              <%= f.number_field :ingredient_5, :size => 30, :value => @user.ingredient_5 %> g
             </div>
           </div>
           <div class="ingredient">
             <div class="ingredient_name">
-              <%= f.text_field :ingredient_6_name %>
+              <%= f.text_field :ingredient_6_name, :value => @user.ingredient_6_name %>
             </div>
             <div class="ingredient_number">
               <%= f.number_field :ingredient_6, :size => 30 %> g
@@ -109,10 +109,10 @@
           </div>
           <div class="ingredient">
             <div class="ingredient_name">
-              <%= f.text_field :ingredient_7_name %>
+              <%= f.text_field :ingredient_7_name, :value => @user.ingredient_7_name %>
             </div>
             <div class="ingredient_number">
-              <%= f.number_field :ingredient_7, :size => 30 %> g
+              <%= f.number_field :ingredient_7, :size => 30, :value => @user.ingredient_6 %> g
             </div>
           </div>
         </div>
@@ -127,10 +127,11 @@
           一次発酵
         </div>
         <div class="chunk_temp">
-           <%= f.number_field :ferment1_temperature, :size => 30 %> ℃
+           <%= f.number_field :ferment1_temperature, :size => 30, :value => @user.ferment1_temperature %> ℃
         </div>
         <div class="chunk_time">
-          <%= f.number_field :ferment1_time_minutes, :size => 30 %> 分 <%= f.number_field :ferment1_time_seconds, :size => 30 %> 秒
+          <%= f.number_field :ferment1_time_minutes, :size => 30, :value => @user.ferment1_time_minutes %> 分 
+          <%= f.number_field :ferment1_time_seconds, :size => 30, :value => @user.ferment1_time_seconds %> 秒
         </div>
       </div>
       <div class="chunk">
@@ -138,10 +139,11 @@
           二次発酵
         </div>
         <div class="chunk_temp">
-           <%= f.number_field :ferment2_temperature, :size => 30 %> ℃
+           <%= f.number_field :ferment2_temperature, :size => 30, :value => @user.ferment2_temperature %> ℃
         </div>
         <div class="chunk_time">
-          <%= f.number_field :ferment2_time_minutes, :size => 30 %> 分 <%= f.number_field :ferment2_time_seconds, :size => 30 %> 秒
+          <%= f.number_field :ferment2_time_minutes, :size => 30, :value => @user.ferment2_time_minutes %> 分 
+          <%= f.number_field :ferment2_time_seconds, :size => 30, :value => @user.ferment2_time_seconds %> 秒
         </div>
       </div>
       <div class="chunk">
@@ -149,10 +151,11 @@
           焼き
         </div>
         <div class="chunk_temp">
-          <%= f.number_field :roasted_temperature, :size => 30 %> ℃
+          <%= f.number_field :roasted_temperature, :size => 30, :value => @user.roasted_temperature %> ℃
         </div>
         <div class="chunk_time">
-          <%= f.number_field :roasted_time_minutes, :size => 30 %> 分 <%= f.number_field :roasted_time_seconds, :size => 30 %> 秒
+          <%= f.number_field :roasted_time_minutes, :size => 30, :value => @user.roasted_time_minutes %> 分 
+          <%= f.number_field :roasted_time_seconds, :size => 30, :value => @user.roasted_time_seconds %> 秒
         </div>
       </div>
     </div>

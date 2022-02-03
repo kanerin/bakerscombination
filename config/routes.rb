@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users
 
   post 'bakerscombinations/calculation/:id' => 'bakerscombinations#calculation',as: 'bakerscombinationscalculation'
+  get 'users/default/:id' => 'users#default',as:'usersdefault'
 
   resources :bakerscombinations do
     resources :likes, only: [:create, :destroy]

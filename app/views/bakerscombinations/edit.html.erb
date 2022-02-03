@@ -7,7 +7,7 @@
     </div>
     <div class="edit_field">
         <% if user_signed_in? && current_user.id == @bakerscombination.user_id %>
-          <%= f.submit "変更する" %>
+          <input type="button" onclick="submit();" value="変更する" />
         <% end %>
     </div>
   </div>
@@ -156,5 +156,3 @@
 <% if user_signed_in? && current_user.id == @bakerscombination.user_id %>
   <%= button_to "削除する", bakerscombination_path(@bakerscombination.id), method: :delete, data: { confirm: '削除しますか？' } %>
 <% end %>
-
-<%= link_to "キャンセル", bakerscombination_path(@bakerscombination.id) %>

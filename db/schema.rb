@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_27_144712) do
+ActiveRecord::Schema.define(version: 2022_02_02_081322) do
 
   create_table "bakerscombinations", force: :cascade do |t|
     t.text "name"
@@ -86,6 +86,33 @@ ActiveRecord::Schema.define(version: 2022_01_27_144712) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
+    t.text "ingredient_1"
+    t.text "ingredient_1_name"
+    t.float "ingredient_2"
+    t.text "ingredient_2_name"
+    t.float "ingredient_3"
+    t.text "ingredient_3_name"
+    t.float "ingredient_4"
+    t.text "ingredient_4_name"
+    t.float "ingredient_5"
+    t.text "ingredient_5_name"
+    t.float "ingredient_6"
+    t.text "ingredient_6_name"
+    t.float "ingredient_7"
+    t.text "ingredient_7_name"
+    t.text "microwave_manufacturer"
+    t.text "microwave_number"
+    t.text "bakery_manufacturer"
+    t.text "bakery_number"
+    t.integer "ferment1_time_minutes"
+    t.integer "ferment1_time_seconds"
+    t.integer "ferment1_temperature"
+    t.integer "ferment2_time_minutes"
+    t.integer "ferment2_time_seconds"
+    t.integer "ferment2_temperature"
+    t.integer "roasted_time_minutes"
+    t.integer "roasted_time_seconds"
+    t.integer "roasted_temperature"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

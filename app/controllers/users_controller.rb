@@ -27,5 +27,22 @@ class UsersController < ApplicationController
         
     end
 
+    def default
+        @user = User.find(params[:id])
+    end
+
+    def update
+        user = User.find(params[:id])
+        redirect_to user_path(current_user.id)
+    end
+
+    def user_params
+        params.require(:user).permit(:ingredient_1_name, :ingredient_1, :ingredient_2_name, :ingredient_2, 
+        :ingredient_3_name, :ingredient_3, :ingredient_4_name, :ingredient_4, :ingredient_5_name, :ingredient_5, :ingredient_6_name, :ingredient_6, 
+        :ingredient_7_name, :ingredient_7, :microwave_manufacturer, :microwave_number, :bakery_manufacturer, :bakery_number, 
+        :ferment1_time_minutes, :ferment1_time_seconds, :ferment1_temperature, :ferment2_time_minutes, :ferment2_time_seconds, :ferment2_temperature,
+        :roasted_time_minutes, :roasted_time_seconds, :roasted_temperature)
+      end
+    
 end
 

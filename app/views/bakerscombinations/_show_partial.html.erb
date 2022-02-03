@@ -62,3 +62,14 @@
         g
     </div>
 </div>
+<div class="ingredient">
+    <div class="ingredient_name">
+        <%= @bakerscombination.ingredient_7_name %>
+    </div>
+    <div class="ingredient_number">
+        <% if !(@bakerscombination.ingredient_7 == nil) %>
+            <div class="ingredient_7"> <%= ( @bakerscombination.ingredient_7 * results[:message] / @bakerscombination.ingredient_1 ).round(1) %> </div>
+        <% end %>
+        g
+    </div>
+</div>

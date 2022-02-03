@@ -63,7 +63,9 @@
               <%= @bakerscombination.ingredient_1_name %>
             </div>
             <div class="ingredient_number">
-              <%= @bakerscombination.ingredient_1 %> g
+              <% if !(@bakerscombination.ingredient_1_name == "") %>
+                <%= @bakerscombination.ingredient_1 %> g
+              <% end %>
             </div>
           </div>
           <div class="ingredient">
@@ -71,7 +73,9 @@
               <%= @bakerscombination.ingredient_2_name %>
             </div>
             <div class="ingredient_number">
-              <%= @bakerscombination.ingredient_2 %> g
+              <% if !(@bakerscombination.ingredient_2_name == "") %>
+                <%= @bakerscombination.ingredient_2 %> g
+              <% end %>
             </div>
           </div>
           <div class="ingredient">
@@ -79,7 +83,9 @@
               <%= @bakerscombination.ingredient_3_name %>
             </div>
             <div class="ingredient_number">
-              <%= @bakerscombination.ingredient_3 %> g
+              <% if !(@bakerscombination.ingredient_3_name == "") %>
+                <%= @bakerscombination.ingredient_3 %> g
+              <% end %>
             </div>
           </div>
           <div class="ingredient">
@@ -87,7 +93,9 @@
               <%= @bakerscombination.ingredient_4_name %>
             </div>
             <div class="ingredient_number">
-              <%= @bakerscombination.ingredient_4 %> g
+              <% if !(@bakerscombination.ingredient_4_name == "") %>
+                <%= @bakerscombination.ingredient_4 %> g
+              <% end %>
             </div>
           </div>
           <div class="ingredient">
@@ -95,7 +103,9 @@
               <%= @bakerscombination.ingredient_5_name %>
             </div>
             <div class="ingredient_number">
-              <%= @bakerscombination.ingredient_5 %> g
+              <% if !(@bakerscombination.ingredient_5_name == "") %>
+                <%= @bakerscombination.ingredient_5 %> g
+              <% end %>
             </div>
           </div>
           <div class="ingredient">
@@ -103,7 +113,19 @@
               <%= @bakerscombination.ingredient_6_name %>
             </div>
             <div class="ingredient_number">
-              <%= @bakerscombination.ingredient_6 %> g
+              <% if !(@bakerscombination.ingredient_6_name == "") %>
+                <%= @bakerscombination.ingredient_6 %> g
+              <% end %>
+            </div>
+          </div>
+          <div class="ingredient">
+            <div class="ingredient_name">
+              <%= @bakerscombination.ingredient_7_name %>
+            </div>
+            <div class="ingredient_number">
+              <% if !(@bakerscombination.ingredient_7_name == "") %>
+                <%= @bakerscombination.ingredient_7 %> g
+              <% end %>
             </div>
           </div>
         </div>
@@ -125,7 +147,9 @@
                 <%= @bakerscombination.ingredient_2_name %>
               </div>
               <div class="ingredient_number">
-                g
+                <% if !(@bakerscombination.ingredient_2_name == "") %>
+                  g
+                <% end %>
               </div>
             </div>
             <div class="ingredient">
@@ -133,7 +157,9 @@
                 <%= @bakerscombination.ingredient_3_name %>
               </div>
               <div class="ingredient_number">
-                g
+                <% if !(@bakerscombination.ingredient_3_name == "") %>
+                  g
+                <% end %>
               </div>
             </div>
             <div class="ingredient">
@@ -141,7 +167,9 @@
                 <%= @bakerscombination.ingredient_4_name %>
               </div>
               <div class="ingredient_number">
-                g
+                <% if !(@bakerscombination.ingredient_4_name == "") %>
+                  g
+                <% end %>
               </div>
             </div>
             <div class="ingredient">
@@ -149,7 +177,9 @@
                 <%= @bakerscombination.ingredient_5_name %>
               </div>
               <div class="ingredient_number">
-                g
+                <% if !(@bakerscombination.ingredient_5_name == "") %>
+                  g
+                <% end %>
               </div>
             </div>
             <div class="ingredient">
@@ -157,7 +187,19 @@
                 <%= @bakerscombination.ingredient_6_name %>
               </div>
               <div class="ingredient_number">
-                g
+                <% if !(@bakerscombination.ingredient_6_name == "") %>
+                  g
+                <% end %>
+              </div>
+            </div>
+            <div class="ingredient">
+              <div class="ingredient_name">
+                <%= @bakerscombination.ingredient_7_name %>
+              </div>
+              <div class="ingredient_number">
+                <% if !(@bakerscombination.ingredient_7_name == "") %>
+                  g
+                <% end %>
               </div>
             </div>
           </div>

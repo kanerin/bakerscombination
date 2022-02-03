@@ -34,8 +34,17 @@
 .content{
   display: flex;
   width: 90%;
-  height: 100%;
   margin-top: 3%;
+  margin-left: 10px;
+  max-height: 80%;
+}
+
+.content_img{
+  min-width: 30%;
+  max-width: 30%;
+  min-height: 30%;
+  max-height: 30%;
+  overflow: hidden;
 }
 
 .content_data{

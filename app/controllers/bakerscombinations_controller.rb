@@ -8,10 +8,10 @@ class BakerscombinationsController < ApplicationController
 
   def new
     @bakerscombination = Bakerscombination.new
+    @user = User.find(current_user.id)
   end
 
   def create
-    
     bakerscombination = Bakerscombination.new(bakers_combination_params)
     bakerscombination.user_id = current_user.id
       if bakerscombination.save
@@ -49,7 +49,7 @@ class BakerscombinationsController < ApplicationController
   def destroy
     bakerscombination = Bakerscombination.find(params[:id])
     bakerscombination.destroy
-    redirect_to action: :index
+    redirect_to user_path(current_user.id)
   end
 
   private
