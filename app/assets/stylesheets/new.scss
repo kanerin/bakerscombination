@@ -23,3 +23,7 @@ form{
 .section > .container > .columns.is-centered > .column.is-6 > form{
     display: block;
 }
+
+form > .field > p{
+    width: 400px;
+}

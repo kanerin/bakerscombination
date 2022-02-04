@@ -64,3 +64,32 @@
 form{
   display: block;
 }
+
+form > .field{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+}
+
+form > .field > label{
+  font-size: xx-large;
+  margin-bottom: 10px;
+}
+
+form > .field > input{
+  height: 40px;
+  width: 300px;
+  background-color: #fff;
+  font-size: large;
+  border: thick solid #aa7150;
+}
+
+.button_to > input{
+  margin-left: 5vw;
+  width: 180px;
+  background-color: #fff;
+  color: #aa7150;
+  font-size: medium;
+}
+

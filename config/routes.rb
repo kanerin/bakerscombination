@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  #devise_for :users
+  
+  devise_for :users, controllers: {
+    sessions: "users/sessions",
+    registrations: "users/registrations"
+  }
   resources :users
 
   post 'bakerscombinations/calculation/:id' => 'bakerscombinations#calculation',as: 'bakerscombinationscalculation'
@@ -11,6 +16,6 @@ Rails.application.routes.draw do
     resources :reviews, only:[:index, :create]
   end
 
-
   root 'bakerscombinations#index'
+  
 end
