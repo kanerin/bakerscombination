@@ -27,3 +27,18 @@ form{
 form > .field > p{
     width: 400px;
 }
+
+form > .show_pass{
+    display: flex;
+    width: 400px;
+    height: 30px;
+    margin: 5px auto 10px;
+    font-size: large;
+    align-items: center;
+}
+
+form > .show_pass > input{
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}

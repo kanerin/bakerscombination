@@ -2,27 +2,28 @@
 <%= stylesheet_link_tag 'index', :media => "all" %>
 
 <div class="menu">
-    <div class="home_field">
-      <div class="home_button">
-        <%= link_to "←ホーム", bakerscombinations_path %>
-      </div>
-    </div>
-    <div class="edit_field">
-      <% if current_user.id == @user.id %>
-        <div class="edit_button">
-          <%= link_to "アカウント設定", edit_user_registration_path %>
-        </div>
-      <% end %>
+  <div class="home_field">
+    <div class="home_button">
+      <%= link_to "←ホーム", bakerscombinations_path %>
     </div>
   </div>
-
+  <div class="edit_field">
+    <% if current_user.id == @user.id %>
+      <div class="edit_button">
+        <%= link_to "アカウント設定", edit_user_registration_path %>
+      </div>
+    <% end %>
+  </div>
+</div>
 
 <section class="main">
   <div class="column is-4">
     <div class="myself">
       <p>名前 : <%= @user.name %></p>
       <p>メールアドレス : <%= @user.email %></p>
-      <%= link_to "初期値設定", usersdefault_path(current_user.id) %>
+      <% if user_signed_in? && current_user.id == @user.id %>
+        <%= link_to "初期値設定", usersdefault_path(current_user.id) %>
+      <% end %>
     </div>
     <h3>マイ投稿</h3>
     <%= form_tag({controller:"users",action:"show"}, method: :get) do %>
@@ -33,7 +34,6 @@
       <div class="clear_button">
         <%= link_to "クリア", user_path(current_user.id) %>
       </div>
-      
     <% end %>
 
     <div class="post-container">

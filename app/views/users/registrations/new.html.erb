@@ -25,25 +25,35 @@
             </p>
           </div>
           <div class="field">
-            <%= f.label :password %>
-            <% if @minimum_password_length %>
-            <em>(<%= @minimum_password_length %> characters minimum)</em>
-            <% end %>
+            <label for="user_password">
+              パスワード
+              <% if @minimum_password_length %>
+              (<%= @minimum_password_length %> 文字以上)
+              <% end %>
+            </label>
             <p class="control has-icons-left">
-            <%= f.password_field :password, autocomplete: "new-password", :placeholder => "password", class: "input" %>
+              <%= f.password_field :password, autocomplete: "new-password", :placeholder => "password", class: "input", id: "pass" %>
+                <span class="icon is-small is-left">
+                  <i class="fas fa-lock"></i>
+                </span>
+            </p>
+          </div>
+          <div class="show_pass">
+            <input type="checkbox" onChange="document.getElementById('pass').type = (this.checked) ? 'text' : 'password';">
+            パスワードを表示する
+          </div>
+          <div class="field">
+            <%= f.label :password_confirmation %>
+            <p class="control has-icons-left">
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", :placeholder => "password confirmation", class: "input", id: "pass_confirm" %>
               <span class="icon is-small is-left">
                 <i class="fas fa-lock"></i>
               </span>
             </p>
           </div>
-          <div class="field">
-            <%= f.label :password_confirmation %>
-            <p class="control has-icons-left">
-              <%= f.password_field :password_confirmation, autocomplete: "new-password", :placeholder => "password confirmation", class: "input" %>
-              <span class="icon is-small is-left">
-                <i class="fas fa-lock"></i>
-              </span>
-            </p>
+          <div class="show_pass">
+            <input type="checkbox" onChange="document.getElementById('pass_confirm').type = (this.checked) ? 'text' : 'password';">
+            パスワードを表示する
           </div>
           <div class="actions">
             <%= f.submit "Sign up", class: "button is-success" %>

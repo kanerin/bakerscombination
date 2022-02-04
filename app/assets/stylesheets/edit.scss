@@ -63,6 +63,7 @@
 
 form{
   display: block;
+
 }
 
 form > .field{
@@ -75,6 +76,8 @@ form > .field{
 form > .field > label{
   font-size: xx-large;
   margin-bottom: 10px;
+  border-bottom: thick solid #aa7150;
+  width: 400px;
 }
 
 form > .field > input{
