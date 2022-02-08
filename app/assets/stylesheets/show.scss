@@ -412,25 +412,23 @@ form > .clear_button {
     position: relative;
     padding: 10px;
     height: 200px;
-
 }
 
 .card-footer > .button_to{
-    width: auto;
+    width: 150px;
     margin-bottom: 0%;
     display: flex;
     margin: 1% 1%;
 }
 
 .card-footer > a{
-    width: 8vw;
+    width: 150px;
     border-radius: 5px;
     border-width: 3px;
     font-size: 1.2vw;
     background: #aa7150;
     font-weight: bold;
     color: #fff;
-    margin-right: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
