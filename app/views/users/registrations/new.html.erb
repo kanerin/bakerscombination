@@ -1,4 +1,5 @@
 <!-- Sign up -->
+<%= stylesheet_link_tag 'new', :media => "all" %>
 
 <section class="section">
   <div class="container">
@@ -9,7 +10,7 @@
           <div class="field">
             <%= f.label :name %>
             <p class="control has-icons-left">
-              <%= f.text_field :name, autofocus: true, :placeholder => "nemename", class: "input" %>
+              <%= f.text_field :name, autofocus: true, :placeholder => "ニックネーム", class: "input" %>
               <span class="icon is-small is-left">
                 <i class="fas fa-user"></i>
               </span>
@@ -18,7 +19,7 @@
           <div class="field">
             <%= f.label :email %>
             <p class="control has-icons-left">
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", :placeholder => "email", class: "input" %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", :placeholder => "メールアドレス", class: "input" %>
               <span class="icon is-small is-left">
                 <i class="fas fa-envelope"></i>
               </span>
@@ -32,7 +33,7 @@
               <% end %>
             </label>
             <p class="control has-icons-left">
-              <%= f.password_field :password, autocomplete: "new-password", :placeholder => "password", class: "input", id: "pass" %>
+              <%= f.password_field :password, autocomplete: "new-password", :placeholder => "パスワード", class: "input", id: "pass" %>
                 <span class="icon is-small is-left">
                   <i class="fas fa-lock"></i>
                 </span>
@@ -45,7 +46,7 @@
           <div class="field">
             <%= f.label :password_confirmation %>
             <p class="control has-icons-left">
-              <%= f.password_field :password_confirmation, autocomplete: "new-password", :placeholder => "password confirmation", class: "input", id: "pass_confirm" %>
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", :placeholder => "確認用パスワード", class: "input", id: "pass_confirm" %>
               <span class="icon is-small is-left">
                 <i class="fas fa-lock"></i>
               </span>
@@ -56,7 +57,7 @@
             パスワードを表示する
           </div>
           <div class="actions">
-            <%= f.submit "Sign up", class: "button is-success" %>
+            <%= f.submit "登録", class: "button is-success is-medium" %>
           </div>
         <% end %>
         <%= render "users/shared/links" %>
