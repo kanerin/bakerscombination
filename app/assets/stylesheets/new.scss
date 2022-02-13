@@ -43,6 +43,80 @@ form > .show_pass > input{
     margin-right: 8px;
 }
 
+.image_field{
+    width: 100%;
+    position: relative;
+    border: #aa7150;
+    border-style: solid;
+}
+
+.image_field:before {
+    content:"";
+    display: block;
+    padding-top: 100%; /* 高さを幅の75%に固定 */
+}
+
+.image_field > label{
+    width: 100%;
+    height: 100%;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.image_field > label > #file{
+    height: 100%;
+    width: 100%;
+}
+
+#field_image{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2px;
+    z-index: 1;
+    background-color: #aa7150;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+#field_image > #field_image_text{
+    color: #fff;
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+.image_field > label > #uplode_text{
+    width: 60%;
+    color: #fff;
+    background-color: #aa7150;
+    font-size: x-large;
+    font-weight: 1000;
+    display: flex;
+    justify-content: center;
+}
+
+#result{
+    pointer-events: none;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+}
+
 #error_explanation{
     background: #ffbf7f;
     border-radius: 15px;

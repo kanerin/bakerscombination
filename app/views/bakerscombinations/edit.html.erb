@@ -21,8 +21,18 @@
   <div class="post_field", id="request_ajax_update">
     <div class="left_side">
       <div class="image_field">
-        <%= f.label :image %>
-        <%= f.file_field :image %>
+        <%= f.label :image, class: 'image_label' do %>
+          <div class="prev-contents">
+            <% if @bakerscombination.image.present? %>
+              <div class="prev-content">
+                <%= image_tag @bakerscombination.image.url, size: "300x300", alt: "preview", class: "prev-image" %>
+              </div>
+            <% else %>
+              <%= image_tag 'none_image.jpg', size: "300x300" %>
+            <% end %>
+          </div>
+          <%= f.file_field :image, class: "hidden" class: 'image_form_contents_field hidden_file' %>
+        <% end %>
       </div>
       <div class="device_field">
         <div class="device_list">
