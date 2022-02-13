@@ -40,7 +40,7 @@ class BakerscombinationsController < ApplicationController
   def update
     bakerscombination = Bakerscombination.find(params[:id])
     if bakerscombination.update(bakers_combination_params)
-      redirect_to :action => "show", :id => bakerscombination.id
+      redirect_to user_path(current_user.id)
     else
       redirect_to :action => "new"
     end

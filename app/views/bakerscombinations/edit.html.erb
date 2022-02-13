@@ -21,18 +21,17 @@
   <div class="post_field", id="request_ajax_update">
     <div class="left_side">
       <div class="image_field">
-        <%= f.label :image, class: 'image_label' do %>
-          <div class="prev-contents">
-            <% if @bakerscombination.image.present? %>
-              <div class="prev-content">
-                <%= image_tag @bakerscombination.image.url, size: "300x300", alt: "preview", class: "prev-image" %>
-              </div>
-            <% else %>
-              <%= image_tag 'none_image.jpg', size: "300x300" %>
-            <% end %>
+        <div id="result">
+          <%= image_tag @bakerscombination.image_url%>
+        </div>
+        <div id="field_image">
+          <div id="field_image_text">
+            ドラッグ&ドロップ<br>またはクリック
           </div>
-          <%= f.file_field :image, class: "hidden" class: 'image_form_contents_field hidden_file' %>
-        <% end %>
+        </div>
+        <label>
+          <%= f.file_field :image, :id => "file"%>
+        </label>
       </div>
       <div class="device_field">
         <div class="device_list">
@@ -166,3 +165,20 @@
 <% if user_signed_in? && current_user.id == @bakerscombination.user_id %>
   <%= button_to "削除する", bakerscombination_path(@bakerscombination.id), method: :delete, data: { confirm: '削除しますか？' } %>
 <% end %>
+
+<script>
+$(function(){
+    $('#file').change(function(){
+        $('img').remove();
+        var file = $(this).prop('files')[0];
+        if(!file.type.match('image.*')){
+          return;
+        }
+        var fileReader = new FileReader();
+        fileReader.onloadend = function() {
+            $('#result').html('<img src="' + fileReader.result + '"/>');
+        }
+        fileReader.readAsDataURL(file);
+    });
+});
+</script>
