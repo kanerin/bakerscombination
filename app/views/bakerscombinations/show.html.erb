@@ -32,9 +32,9 @@
   <div class="left_side">
     <div class="image_field">
     <% if @bakerscombination.image? %>
-      <%= image_tag @bakerscombination.image_url, size: "250x200" if @bakerscombination.image? %>
+      <%= image_tag @bakerscombination.image_url%>
     <% else %>
-      <%= image_tag 'none_image.jpg', size: "200x200" %>
+      <%= image_tag 'none_image.jpg', size: "100%" %>
     <% end %>
     </div>
     <div class="device_field">
