@@ -276,7 +276,7 @@ DEPENDENCIES
   kaminari
   pg
   puma (~> 5.0)
-  rack-mini-profiler (~> 2.0)
+  rack-mini-profiler
   rails (~> 6.1.4, >= 6.1.4.4)
   ransack
   sass-rails (>= 6)
