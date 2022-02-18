@@ -1,26 +1,28 @@
 .menu {
-  height: 60px;
+  height: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 15px auto;
+  margin: 15px 15px;
 }
 @media screen and(max-width:790px){
     .menu{
-        height: 60px;
-        display:block;
+        height: auto;
+        display: block;
         justify-content: center;
         align-items: center;
     }
 }
 
 .home_field {
-  width: 25%;
+  width: 30%;
+  min-width: 220px;
   height: 100%;
   text-align: center;
   display: flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
+  margin: 1% 0;
 }
 
 .home_button {
@@ -47,12 +49,14 @@
   }
 
 .edit_field {
-    width: 25%;
+    width: 30%;
+    min-width: 220px;
     height: 100%;
     text-align: center;
     display: flex;
     justify-content: center;/* flexアイテムの左右中央を指定する */
     align-items: center; /* flexアイテムの上下中央を指定する */
+    margin: 1% 0;
 }
 
 .edit_button {
@@ -77,10 +81,10 @@
 
 .name_box > .name {
     display: flex;
-    margin-left: 5%;
+    margin-left: 8%;
     justify-content: center;/* flexアイテムの左右中央を指定する */
     align-items: center; /* flexアイテムの上下中央を指定する */
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
     position: relative;
     padding: 1rem .5rem;
@@ -127,19 +131,20 @@
 }
 
 .post_field {
-    height: auto;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 20px;
+    height: auto;
 }
 
 .post_field > .left_side  {
     height: auto;
     display: flex;
     flex-direction: column;
-    width: 350px;
-    margin-left: 80px;
-    min-width: 250px;
+    width: unquote("max(30%, 300px)");
+    margin: 0 auto;
+    padding: 0 4%;
 }
 
 .post_field > .left_side > .image_field{
@@ -190,51 +195,74 @@ img {
     margin-top: 10px;
 }
 
-.post_field > form >.center_side {
+.post_field > form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 45%;
+    margin: 0 auto 5% auto;
+    padding: 0 1%;
+    min-width: 300px;
+}
+
+.post_field > form > .center_side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .post_field > form > .center_side > .center_side_list {
     display: flex;
-    flex-direction: row;
-    height: 450px;
-
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5%;
 }
 
 .data_side{
-    margin: 0px 30px;
-    width: 350px;
+    margin: 0% 5% 5% 5%;
+    width: 40%;
+    min-width: 120px;
 }
 
 .calculation_side{
-    margin: 0px 30px;
-    width: 350px;
+    margin: 0% 5% 5% 5%;
+    width: 40%;
+    min-width: 120px;
 }
 
 .little_title {
-    font-size: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 25px;
     border-bottom: thick solid #aa7150;
-    height: 50px;
+    height: auto;
+
 }
 
 .ingredient {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin: 10px auto;
 }
 
 .ingredient_name {
-    font-size: 30px;
-    display: flex;
+    display: inline-block;
+    align-items: center;
+    font-size: 130%;
+    min-width: 80px;
+    margin-right: 5%;
 }
 
 .ingredient_number {
     display: flex;
-    font-size: 30px;
-    margin-left: 50px;
-    
+    align-items: center;
+    justify-content: right;
+    font-size: 20px;
+    width: 55%;
+    min-width: 100px;
+    margin-left:auto;
 }
 
 .ingredient_number > div{
@@ -249,18 +277,19 @@ img {
     border-color: #aa7150;
     border-style: solid;
     height: 35px;
-    width: 150px;
+    width: 90%;
+    min-width: 70px;
     vertical-align: top;
-    font-size: 30px;
+    font-size: 100%;
     text-align: right;
-    margin-right: 10px;
+    margin-right: 5%;
 }
 
 .ingredient_name > input {
     border-color: #aa7150;
     border-style: solid;
     height: 35px;
-    width: 180px;
+    width: 80%;
     vertical-align: top;
     font-size: 20px;
     text-align: left;
@@ -291,7 +320,8 @@ img {
     vertical-align: top;
     font-size: 20px;
     text-align: right;
-    width: 150px;
+    width: 45%;
+    min-width: 80px;
 }
 
 .chunk > .chunk_time > input{
@@ -300,7 +330,8 @@ img {
     vertical-align: top;
     font-size: 20px;
     text-align: right;
-    width: 150px;
+    width: 45%;
+    min-width: 80px;
 }
 
 .calculation_side_button {
@@ -325,33 +356,41 @@ img {
 .post_field > .right_side {
     display: flex;
     flex-direction: column;
-    width: 300px;
-    margin-right: 40px;
+    flex-wrap: wrap;
+    width: 20%;
+    min-width: 200px;
+    margin: 0 auto;
+    padding: 0 1%;
+}
+
+.chunk_box {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .chunk {
-    width: 100%;
+    width: 90%;
     margin: 10px auto;
 }
 
 .chunk_name {
-    font-size: 30px;
+    display: inline-block;
+    font-size: 20px;
 }
 
 .chunk_time {
-    font-size: 25px;
+    font-size: 20px;
     text-align: right;
 }
 
 .chunk_temp {
-    font-size: 25px;
+    font-size: 20px;
     text-align: right;
 }
 
 .card.mb-6 {
-    min-width: 550px;
-    height: 20vw;
-    min-height: 270px;
+    width: 100%;
+    min-height: 280px;
     overflow: hidden;
 }
 
@@ -381,6 +420,7 @@ img {
 
 .main {
     display: flex;
+    flex-wrap: wrap-reverse;
     justify-content: space-between;
     margin-top: 30px;
     margin-left: 5vw;
@@ -391,6 +431,8 @@ img {
     width: 65%;
     display: flex;
     justify-content: center;
+    min-width: 330px;
+    margin: 0 auto;
 }
 
 .column.is-4 {
@@ -398,19 +440,38 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-width: 330px;
+    margin: 0 auto;
+    flex: none;
 }
 
-.my_post-container{
+.column.is-4 > form{
+    display: flex;
     justify-content: center;
     align-items: center;
+    width: 90%;
 }
 
 .column.is-4 > .post-container{
-    width: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-    min-width: 500px;
+    width: 90%;
+}
+
+.column.is-5 > form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+
+.my_post-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-width: 350px;
 }
 
 .myself > p{
@@ -425,19 +486,51 @@ form{
 
 form > .search_box{
     margin-right: 15px;
+    width: 50%;
+    height: 30px;
 }
 
 form > .search_box > input{
-    border: thick solid #aa7150;
-    width: 13vw;
-    height: 2.3vw;
+    border-color: #aa7150;
+    border-style: solid;
+    width: 100%;
+    height: 100%;
+}
+
+#favorite > form > .search_box{
+    margin-right: 15px;
+    width: 40%;
+    height: 30px;
+}
+
+#favorite > form > .search_box > input{
+    border-color: #aa7150;
+    border-style: solid;
+    width: 100%;
+    height: 100%;
 }
 
 form > input{
-    width: 8vw;
+    width: 20%;
+    height: 100%;
     border-radius: 5px;
     border-width: 3px;
-    font-size: 1.2vw;
+    font-size: medium;
+    border-color: #aa7150;
+    border-style: solid;
+    background: #fff;
+    font-weight: bold;
+    color: #aa7150;
+    margin-right: 15px;
+}
+
+#favorite > form > input{
+    width: 15%;
+    min-width: 60px;
+    height: 100%;
+    border-radius: 5px;
+    border-width: 3px;
+    font-size: medium;
     border-color: #aa7150;
     border-style: solid;
     background: #fff;
@@ -454,16 +547,31 @@ h3{
 }
 
 form > .clear_button {
-    width: 5vw;
+    width: 20%;
+    height: 100%;
     border-radius: 5px;
     border-width: 3px;
-    font-size: 1.2vw;
+    font-size: medium;
     background: #aa7150;
     font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
+
+#favorite > form > .clear_button {
+    width: 15%;
+    min-width: 60px;
+    height: 100%;
+    border-radius: 5px;
+    border-width: 3px;
+    font-size: medium;
+    background: #aa7150;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .card-footer{
     display: flex;
@@ -485,15 +593,16 @@ form > .clear_button {
 }
 
 .card-footer > a{
-    width: 150px;
+    width: 130px;
+    height: 30px;
     border-radius: 5px;
     border-width: 3px;
-    font-size: 1.2vw;
+    font-size: medium;
     background: #aa7150;
     font-weight: bold;
     color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 3% 1%;
+    margin: 3% 10px 3% 10px;
 }

@@ -138,3 +138,54 @@ form > .show_pass > input{
 .column.is-6{
     min-width: 700px;
 }
+
+.post_field > .center_side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+    min-width: 340px;
+    margin: 0 auto;
+}
+
+.input_side{
+    margin: 0 auto;
+    width: 80%;
+    min-width: 150px;
+}
+
+.input_side > .ingredient {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 10px auto;
+}
+
+.input_side > .ingredient > .ingredient_name {
+    align-items: center;
+    width: 40%;
+    min-width: 120px;
+    margin: 0 0 2% 0;
+}
+
+.input_side > .ingredient > .ingredient_number {
+    align-items: center;
+    margin: 0 0 2% 0;
+    margin-left: auto;
+}
+
+.input_side > .ingredient > .ingredient_name > input {
+    display: inline-block;
+    font-size: 80%;
+    width: 100%;
+    margin-right: 5%;
+    border: solid #aa7150;
+}
+
+.input_side > .ingredient > .ingredient_number > input {
+    display: inline-block;
+    font-size: 80%;
+    width: 80%;
+    min-width: 120px;
+    border: solid #aa7150;
+}

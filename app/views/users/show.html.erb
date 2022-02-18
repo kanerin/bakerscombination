@@ -36,7 +36,7 @@
       </div>
     <% end %>
 
-    <div class="post-container">
+    <div class="my_post-container">
       <% @bakerscombinations.each do |t| %>
         <div class="mycard mb-6">
           <header class="card-header">
@@ -54,30 +54,28 @@
                 <% end %>
               </div>
               <div class="content_data">
-                <div class="content_data">
-                  <h3>使用材料</h3>
-                  <div class="ingredient_name">
-                    <% if !(t.ingredient_1_name == "") %>
-                      ・
-                    <% end %>
-                    <%= t.ingredient_1_name %>
-                  </div>
-                  <div class="ingredient_name">
-                    <% if !(t.ingredient_2_name == "") %>
-                      ・
-                    <% end %>
-                    <%= t.ingredient_2_name %>
-                  </div>
-                  <div class="ingredient_name">
-                    <% if !(t.ingredient_3_name == "") %>
-                      ・
-                    <% end %>
-                    <%= t.ingredient_3_name %>
-                  </div>
-                  
-                  <div class="detail">
-                    <%= link_to "詳細へ→", bakerscombination_path(t.id) %>
-                  </div>
+                <h3>使用材料</h3>
+                <div class="ingredient_name">
+                  <% if !(t.ingredient_1_name == "") %>
+                    ・
+                  <% end %>
+                  <%= t.ingredient_1_name %>
+                </div>
+                <div class="ingredient_name">
+                  <% if !(t.ingredient_2_name == "") %>
+                    ・
+                  <% end %>
+                  <%= t.ingredient_2_name %>
+                </div>
+                <div class="ingredient_name">
+                  <% if !(t.ingredient_3_name == "") %>
+                    ・
+                  <% end %>
+                  <%= t.ingredient_3_name %>
+                </div>
+                
+                <div class="detail">
+                  <%= link_to "詳細へ→", bakerscombination_path(t.id) %>
                 </div>
               </div>
               
@@ -95,7 +93,7 @@
     </div>
   </div>
   <div class="my_container">
-    <div class="column is-5">
+    <div class="column is-5", id="favorite">
       <h3>おきに</h3>
       <%= form_tag({controller:"users",action:"show"}, method: :get) do %>
         <div class="search_box">

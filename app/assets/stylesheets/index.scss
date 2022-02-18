@@ -1,22 +1,23 @@
 .main {
   display: flex;
   justify-content: space-between;
-  margin-top: 30px;
-  margin-left: 5vw;
-  margin-right: 5vw;
+  margin: 30px auto 0 auto;
+  width: 90%;
 }
 
-.container{
+.main > .container{
   display: flex;
-  width: 200vw;
+  max-width: 60%;
+  min-width: 330px;
   justify-content: center;
-  margin-bottom: 100px;
+  margin: 0 auto 100px auto;
 }
 
 .post-container{
   justify-content: center;
   align-items: center;
   width: 80%;
+  min-width: 350px;
 }
 
 .column.is-5 {
@@ -33,34 +34,34 @@
 
 .content{
   display: flex;
+  flex-wrap: wrap;
   width: 90%;
   margin-top: 3%;
   margin-left: 10px;
-  max-height: 80%;
+  max-height: 70%;
 }
 
 .content_img{
-  min-width: 30%;
-  max-width: 30%;
-  min-height: 30%;
-  max-height: 30%;
+  width: 30%;
+  min-width: 130px;
   overflow: hidden;
 }
 
 .content_data{
-  margin-left: 10%;
+  margin-left: 5%;
+  width: 50%;
   min-width: 120px;
-  height: 70%;
+  max-height: 150px;
+  overflow: auto;
 }
 
-.card-content{
+.card-content{  
   position: relative;
-  padding: 10px;
-  height: 80%;
+  padding: 10px 10px 60px 10px;
 }
 
 .content_data > .ingredient_name{
-  font-size: 20px;
+  font-size: 100%;
   display: inline-block;
   margin-right: 5%;
 }
@@ -81,33 +82,66 @@
   margin: 5px;
 }
 
-.bakerscombination_search{
-  width: 80vw;
+#bakerscombination_search{
+  width: 20%;
+  min-width: 180px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 auto;
 }
 
-.bakerscombination_search > h3{
-  font-size: 2vw;
+@media screen and(max-width:810px){
+  #bakerscombination_search{
+    width: 90%;
+    min-width: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  #bakerscombination_search > .search_box {
+    height: 30px;
+  }
+
+  #bakerscombination_search > .search_box > input{
+    width: 60%;
+    height: 30px;
+    font-size: 1vw;
+    background-color: #fff;
+    border: solid #aa7150;
+  }
+  
+  .post-container{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
 }
 
-.bakerscombination_search > .search_box > label{
-  font-size: 1.5vw;
+#bakerscombination_search > h3{
+  font-size: x-large;
 }
 
-.bakerscombination_search > .search_box > input{
-  width: 15vw;
-  height: 3vw;
-  font-size: 1vw;
+#bakerscombination_search > .search_box > label{
+  font-size: medium;
+}
+
+#bakerscombination_search > .search_box > input{
+  width: 60%;
+  height: 30px;
+  font-size: 90%;
   background-color: #fff;
-  border: thick solid #aa7150;
+  border: solid #aa7150;
 }
 
-.bakerscombination_search > .search_box{
+#bakerscombination_search > .search_box{
+  width: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
-  margin-bottom: 5%;
+  margin: 2% auto;
 }
 
 .device_name {
@@ -118,29 +152,32 @@
 }
 
 .bakerscombination_search > .button_box{
-  width: 70%;
+  width: 90%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 100px;
+  margin: 5% 1%;
 }
 
 .bakerscombination_search > .button_box > input{
   width: 60%;
+  height: 30px;
   border-radius: 5px;
   border-width: 3px;
-  font-size: 1.2vw;
+  font-size: medium;
   border-color: #aa7150;
   border-style: solid;
   background: #fff;
   font-weight: bold;
   color: #aa7150;
+  margin: 0 5%;
 }
 
 .clear_button {
-  width: 30%;
+  width: 40%;
+  height: 30px;
   border-radius: 5px;
   border-width: 3px;
-  font-size: 1.2vw;
+  font-size: medium;
   background: #aa7150;
   font-weight: bold;
   display: flex;
@@ -157,4 +194,8 @@
   font-size: xx-large;
   border-bottom: thick solid #aa7150;
   margin-bottom: 15px;
+}
+
+.contributor{
+  width: 40%;
 }

@@ -54,72 +54,64 @@
 
     <div class="center_side">
       <div class="center_side_list">
-        <div class="data_side">
+        <div class="input_side">
           <div class="little_title">
-            ベーカーズパーセント
+            <div>ベーカーズ</div><div>パーセント</div>
           </div>
           <div class="ingredient">
             <div class="ingredient_name">
-              材料
+              <%= f.text_field :ingredient_1_name, required: true, :value => @user.ingredient_1_name, :placeholder => "材料を入力" %>
             </div>
             <div class="ingredient_number">
-              分量
-            </div>
-          </div>
-          <div class="ingredient">
-            <div class="ingredient_name">
-              <%= f.text_field :ingredient_1_name, required: true, :value => @user.ingredient_1_name %>
-            </div>
-            <div class="ingredient_number">
-              <%= f.number_field :ingredient_1, :size => 30, required: true, :value => @user.ingredient_1 %> g
+              <%= f.number_field :ingredient_1, :size => 30, required: true, :value => @user.ingredient_1, :placeholder => "分量を入力" %> g
             </div>
           </div>
           <div class="ingredient">
             <div class="ingredient_name">
-              <%= f.text_field :ingredient_2_name, required: true, :value => @user.ingredient_2_name %>
+              <%= f.text_field :ingredient_2_name, required: true, :value => @user.ingredient_2_name, :placeholder => "材料を入力" %>
             </div>
             <div class="ingredient_number">
-              <%= f.number_field :ingredient_2, :size => 30, required: true, :value => @user.ingredient_2 %> g
+              <%= f.number_field :ingredient_2, :size => 30, required: true, :value => @user.ingredient_2, :placeholder => "分量を入力" %> g
             </div>
           </div>
           <div class="ingredient">
             <div class="ingredient_name">
-              <%= f.text_field :ingredient_3_name, :value => @user.ingredient_3_name %>
+              <%= f.text_field :ingredient_3_name, :value => @user.ingredient_3_name, :placeholder => "材料を入力" %>
             </div>
             <div class="ingredient_number">
-              <%= f.number_field :ingredient_3, :size => 30, :value => @user.ingredient_3 %> g
+              <%= f.number_field :ingredient_3, :size => 30, :value => @user.ingredient_3, :placeholder => "分量を入力" %> g
             </div>
           </div>
           <div class="ingredient">
             <div class="ingredient_name">
-              <%= f.text_field :ingredient_4_name, :value => @user.ingredient_4_name %>
+              <%= f.text_field :ingredient_4_name, :value => @user.ingredient_4_name, :placeholder => "材料を入力" %>
             </div>
             <div class="ingredient_number">
-              <%= f.number_field :ingredient_4, :size => 30, :value => @user.ingredient_4 %> g
+              <%= f.number_field :ingredient_4, :size => 30, :value => @user.ingredient_4, :placeholder => "分量を入力" %> g
             </div>
           </div>
           <div class="ingredient">
             <div class="ingredient_name">
-              <%= f.text_field :ingredient_5_name, :value => @user.ingredient_5_name %>
+              <%= f.text_field :ingredient_5_name, :value => @user.ingredient_5_name, :placeholder => "材料を入力" %>
             </div>
             <div class="ingredient_number">
-              <%= f.number_field :ingredient_5, :size => 30, :value => @user.ingredient_5 %> g
+              <%= f.number_field :ingredient_5, :size => 30, :value => @user.ingredient_5, :placeholder => "分量を入力" %> g
             </div>
           </div>
           <div class="ingredient">
             <div class="ingredient_name">
-              <%= f.text_field :ingredient_6_name, :value => @user.ingredient_6_name %>
+              <%= f.text_field :ingredient_6_name, :value => @user.ingredient_6_name, :placeholder => "材料を入力" %>
             </div>
             <div class="ingredient_number">
-              <%= f.number_field :ingredient_6, :size => 30 %> g
+              <%= f.number_field :ingredient_6, :size => 30, :value => @user.ingredient_6, :placeholder => "分量を入力" %> g
             </div>
           </div>
           <div class="ingredient">
             <div class="ingredient_name">
-              <%= f.text_field :ingredient_7_name, :value => @user.ingredient_7_name %>
+              <%= f.text_field :ingredient_7_name, :value => @user.ingredient_7_name, :placeholder => "材料を入力" %>
             </div>
             <div class="ingredient_number">
-              <%= f.number_field :ingredient_7, :size => 30, :value => @user.ingredient_6 %> g
+              <%= f.number_field :ingredient_7, :size => 30, :value => @user.ingredient_7, :placeholder => "分量を入力" %> g
             </div>
           </div>
         </div>
@@ -128,41 +120,43 @@
     <div class="right_side">
       <div class="little_title">
         温度と時間
-      </div>
-      <div class="chunk">
-        <div class="chunk_name">
-          一次発酵
+      </div><br>
+      <div class="chunk_box">
+        <div class="chunk">
+          <div class="chunk_name">
+            一次発酵
+          </div>
+          <div class="chunk_temp">
+            <%= f.number_field :ferment1_temperature, :size => 30, :value => @user.ferment1_temperature %> ℃
+          </div>
+          <div class="chunk_time">
+            <%= f.number_field :ferment1_time_minutes, :size => 30, :value => @user.ferment1_time_minutes %> 分 
+            <%= f.number_field :ferment1_time_seconds, :size => 30, :value => @user.ferment1_time_seconds %> 秒
+          </div>
         </div>
-        <div class="chunk_temp">
-           <%= f.number_field :ferment1_temperature, :size => 30, :value => @user.ferment1_temperature %> ℃
+        <div class="chunk">
+          <div class="chunk_name">
+            二次発酵
+          </div>
+          <div class="chunk_temp">
+            <%= f.number_field :ferment2_temperature, :size => 30, :value => @user.ferment2_temperature %> ℃
+          </div>
+          <div class="chunk_time">
+            <%= f.number_field :ferment2_time_minutes, :size => 30, :value => @user.ferment2_time_minutes %> 分 
+            <%= f.number_field :ferment2_time_seconds, :size => 30, :value => @user.ferment2_time_seconds %> 秒
+          </div>
         </div>
-        <div class="chunk_time">
-          <%= f.number_field :ferment1_time_minutes, :size => 30, :value => @user.ferment1_time_minutes %> 分 
-          <%= f.number_field :ferment1_time_seconds, :size => 30, :value => @user.ferment1_time_seconds %> 秒
-        </div>
-      </div>
-      <div class="chunk">
-        <div class="chunk_name">
-          二次発酵
-        </div>
-        <div class="chunk_temp">
-           <%= f.number_field :ferment2_temperature, :size => 30, :value => @user.ferment2_temperature %> ℃
-        </div>
-        <div class="chunk_time">
-          <%= f.number_field :ferment2_time_minutes, :size => 30, :value => @user.ferment2_time_minutes %> 分 
-          <%= f.number_field :ferment2_time_seconds, :size => 30, :value => @user.ferment2_time_seconds %> 秒
-        </div>
-      </div>
-      <div class="chunk">
-        <div class="chunk_name">
-          焼き
-        </div>
-        <div class="chunk_temp">
-          <%= f.number_field :roasted_temperature, :size => 30, :value => @user.roasted_temperature %> ℃
-        </div>
-        <div class="chunk_time">
-          <%= f.number_field :roasted_time_minutes, :size => 30, :value => @user.roasted_time_minutes %> 分 
-          <%= f.number_field :roasted_time_seconds, :size => 30, :value => @user.roasted_time_seconds %> 秒
+        <div class="chunk">
+          <div class="chunk_name">
+            焼き
+          </div>
+          <div class="chunk_temp">
+            <%= f.number_field :roasted_temperature, :size => 30, :value => @user.roasted_temperature %> ℃
+          </div>
+          <div class="chunk_time">
+            <%= f.number_field :roasted_time_minutes, :size => 30, :value => @user.roasted_time_minutes %> 分 
+            <%= f.number_field :roasted_time_seconds, :size => 30, :value => @user.roasted_time_seconds %> 秒
+          </div>
         </div>
       </div>
     </div>
