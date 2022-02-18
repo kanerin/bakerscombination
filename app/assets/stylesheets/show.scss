@@ -142,7 +142,8 @@
     height: auto;
     display: flex;
     flex-direction: column;
-    width: unquote("max(30%, 300px)");
+    width: 30%;
+    min-width: 300px;
     margin: 0 auto;
     padding: 0 4%;
 }
