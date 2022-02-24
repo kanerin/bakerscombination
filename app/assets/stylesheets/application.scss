@@ -37,27 +37,37 @@ body {
   font-family: sans-serif;
   overflow: hidden;
 }
+
 .pagination{
+  width: 100%;
   margin-bottom: 3vw;
 }
 
  /*ページネーション自体のデザイン*/
 .pagination>li>a {
+  font-size: large;
   border: none;     /*枠線をなくす*/
-  color: #696969;   /*文字の色を変える*/
+  color: #aa7150;   /*文字の色を変える*/
+  padding: 5px 10px;
 }
   
   /* 表示しているページ番号のデザイン */
 .pagination>.active>a {
+  display: inline-block;
   background: #93c9ff;     /*背景の色を変える*/
-  border-radius: 15px;     /*角を丸くする*/
+  padding: 5px 10px;
+  
 }
   
   /*ホバー時のデザイン*/
 .pagination>li>a:hover {
-  border-radius: 15px;    /*角を丸くする*/
+  background-color: #aa7150;
+  color: #fff;
+  border-radius: 5px;     /*角を丸くする*/
+  padding: 5px 10px;
 }
 
 .columns.is-centered{
   width: 80%;
+  margin: 0px auto;
 }

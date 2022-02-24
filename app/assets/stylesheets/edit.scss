@@ -1,5 +1,5 @@
 .menu {
-    height: 60px;
+    height: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -7,10 +7,11 @@
   }
   @media screen and(max-width:790px){
       .menu{
-          height: 60px;
+          height: auto;
           display:block;
           justify-content: center;
           align-items: center;
+          margin: 15px auto;
       }
   }
   
@@ -81,7 +82,7 @@ form > .field > label{
 }
 
 .button_to > input{
-  margin-left: 1vw;
+  margin-left: 10%;
   width: 180px;
   height: 90%;
   background-color: #fff;

@@ -5,8 +5,22 @@
   align-items: center;
   margin: 15px 15px;
 }
+
+form > .menu {
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 15px;
+}
 @media screen and(max-width:790px){
     .menu{
+        height: auto;
+        display: block;
+        justify-content: center;
+        align-items: center;
+    }
+    form > .menu {
         height: auto;
         display: block;
         justify-content: center;
@@ -22,7 +36,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1% 0;
+  margin: 10px 0px;
 }
 
 .home_button {
@@ -75,13 +89,14 @@
 
 .name_box {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    height: 80px;
+    height: auto;
 }
 
 .name_box > .name {
     display: flex;
-    margin-left: 8%;
+    margin: 0 0 20px 8%;
     justify-content: center;/* flexアイテムの左右中央を指定する */
     align-items: center; /* flexアイテムの上下中央を指定する */
     font-size: 30px;
@@ -91,16 +106,18 @@
 }
 
 .name_box > .favorite {
-    
     width: 25%;
+    min-width: 250px;
     height: 100%;
     text-align: center;
     display: flex;
     justify-content: center;/* flexアイテムの左右中央を指定する */
     align-items: center; /* flexアイテムの上下中央を指定する */
+    margin: auto 0px auto auto;
 }
 
 .name_box > .favorite > a {
+    min-width: 230px;
     color: #000;
     font-size: 25px;
 }
