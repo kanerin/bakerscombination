@@ -51,6 +51,10 @@ form > .menu {
   color: #fff;
 }
 
+.home_button > a:hover {
+    color: #b19382;
+}
+
 .home_field > input {
     width: 250px;
     border-radius: 5px;
@@ -81,10 +85,14 @@ form > .menu {
     border-style: solid;
     background: #fff;
     font-weight: bold;
-  }
+}
 
 .edit_button > a {
   color: #aa7150;
+}
+
+.edit_button > a:hover {
+    color: #b19382;
 }
 
 .name_box {
@@ -332,23 +340,13 @@ img {
     width: 200px;
 }
 
-.chunk > .chunk_temp > input{
+.chunk > div > input{
     border-color: #aa7150;
     border-style: solid;
     vertical-align: top;
     font-size: 20px;
     text-align: right;
-    width: 45%;
-    min-width: 80px;
-}
-
-.chunk > .chunk_time > input{
-    border-color: #aa7150;
-    border-style: solid;
-    vertical-align: top;
-    font-size: 20px;
-    text-align: right;
-    width: 45%;
+    width: 60%;
     min-width: 80px;
 }
 
@@ -623,4 +621,25 @@ form > .clear_button {
     justify-content: center;
     align-items: center;
     margin: 3% 10px 3% 10px;
+}
+
+.myself {
+    background-color: #fff;
+    border: #aa7150 solid;
+    padding: 5%;
+}
+
+.myself  > p {
+    margin-bottom: 10%; 
+}
+
+.myself  > a {
+    border: #aa7150 solid;
+    padding: 1%;
+    color: #aa7150;
+}
+
+.myself  > a:hover {
+    background-color: #aa7150;
+    color: #fff;
 }
