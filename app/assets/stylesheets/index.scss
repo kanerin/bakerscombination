@@ -82,6 +82,12 @@
   margin: 5px;
 }
 
+.content_data > .detail > a:hover{
+  font-size: 20px;
+  color: #b19382;
+  margin: 5px;
+}
+
 #bakerscombination_search{
   width: 20%;
   min-width: 180px;
@@ -172,6 +178,20 @@
   margin: 0 5%;
 }
 
+.bakerscombination_search > .button_box > input:hover{
+  width: 60%;
+  height: 30px;
+  border-radius: 5px;
+  border-width: 3px;
+  font-size: medium;
+  border-color: #aa7150;
+  border-style: solid;
+  background: #aa7150;
+  font-weight: bold;
+  color: #fff;
+  margin: 0 5%;
+}
+
 .clear_button {
   width: 40%;
   height: 30px;
@@ -187,6 +207,10 @@
 
 .clear_button > a {
   color: #fff;
+}
+
+.clear_button > a:hover {
+  color: #b19382;
 }
 
 .column.is-5 > h3{

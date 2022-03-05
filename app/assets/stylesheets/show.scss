@@ -45,6 +45,7 @@ form > .menu {
   font-size: 30px;
   background: #aa7150;
   font-weight: bold;
+  border: #aa7150 solid;
 }
 
 .home_button > a {
@@ -64,7 +65,18 @@ form > .menu {
     color: #fff;
     border-color: #aa7150;
     border-style: solid;
-  }
+}
+
+.home_field > input:hover {
+    width: 250px;
+    border-radius: 5px;
+    font-size: 30px;
+    background: #fff;
+    font-weight: bold;
+    color: #aa7150;
+    border-color: #aa7150;
+    border-style: solid;
+}
 
 .edit_field {
     width: 30%;

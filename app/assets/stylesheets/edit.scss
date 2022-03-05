@@ -56,6 +56,18 @@
   font-weight: bold;
   color: #aa7150;
 }
+
+.edit_field > input:hover{
+  width: 250px;
+  border-radius: 5px;
+  border-width: 3px;
+  font-size: 30px;
+  border-color: #aa7150;
+  border-style: solid;
+  background: #aa7150;
+  font-weight: bold;
+  color: #fff;
+}
   
 .edit_button > input {
   background-color: #fff;
